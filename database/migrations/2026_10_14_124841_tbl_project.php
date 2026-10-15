@@ -11,7 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('tblProject', function (Blueprint $table) {
+            $table->id('flngProjectId');
+            $table->string('fstrProjectTitle');
+            $table->string('fstrNotes')->nullable();
+            $table->string('fstrConsole')->nullable();
+            $table->string('fstrSource')->nullable();
+            $table->string('fstrAbout')->nullable();
+        });
     }
 
     /**
@@ -19,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('tblProject');
     }
 };
