@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title>{{ $title ?? config('app.name') }}</title>
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
         @livewireStyles
@@ -47,6 +47,9 @@
                 text-decoration: none; 
             }
             a:hover {
+                cursor: pointer;
+            }
+            i:hover {
                 cursor: pointer;
             }
             h1, h2, h3, p { 
@@ -134,7 +137,9 @@
             }
             .panelHeading { 
                 background: var(--panelHeader);
-                border-bottom: 1px solid var(--gray700); 
+                border-bottom: 1px solid var(--gray700);
+                display: flex;
+                justify-content: space-between;
             }
             
             .panelHeading { 
@@ -336,11 +341,15 @@
             }
             input:focus-visible {
                 outline: 1px solid var(--primary); 
-                
             }
             input::placeholder {
                 color: var(--gray600);
             }
+            textarea {
+                width: 100%;
+                min-height: 300px;
+            }
+
         </style>
     </head>
     <body>

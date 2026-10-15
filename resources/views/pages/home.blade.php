@@ -57,7 +57,7 @@ new class extends Component {
                 <p>About</p>
                 @break
             @default
-                <livewire:project :plngProjectId="$pstrPage" />
+                <livewire:project.overview :plngProjectId="$pstrPage" />
         @endswitch
         
 

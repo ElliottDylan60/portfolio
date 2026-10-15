@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('tblProject', function (Blueprint $table) {
             $table->id('flngProjectId');
             $table->string('fstrProjectTitle');
-            $table->string('fstrNotes')->nullable();
+            $table->longText('fstrNotes')->nullable();
             $table->string('fstrConsole')->nullable();
             $table->string('fstrSource')->nullable();
-            $table->string('fstrAbout')->nullable();
+            $table->longText('fstrAbout')->nullable();
         });
     }
 
