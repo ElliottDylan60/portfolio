@@ -2,6 +2,7 @@
 
 use Livewire\Component;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
 
 use App\Models\tblProject;
 
@@ -12,11 +13,13 @@ new class extends Component
     public $tblProject;
 
     public function update(){
-        $tblProject = tblProject::where([
-            ["flngProjectId", $this->plngProjectId]
-        ])->first();
-        $tblProject->fstrNotes = $this->pstrNotes;
-        $tblProject->save();
+        if(Auth::id()){
+            $tblProject = tblProject::where([
+                ["flngProjectId", $this->plngProjectId]
+            ])->first();
+            $tblProject->fstrNotes = $this->pstrNotes;
+            $tblProject->save();
+        }
     }
     public function mount(){
         $this->tblProject = tblProject::where([

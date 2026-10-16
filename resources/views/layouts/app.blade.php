@@ -25,11 +25,12 @@
 
                 --headerText: #479cd8;
 
-
+                
                 --gray500: #bfbfbf;
                 --gray600: #a6a6a6;
                 --gray750: #595959;
                 --gray700: #4d4d4d;
+                --gray800: #464d4d;
                 --gray900: #1a1a1a;
             }
 
@@ -94,11 +95,24 @@
             header { 
                 height: 40px;
             }
+            .userButton {
+                font: inherit;
+                color: var(--white);
+                display: inline-block; 
+                padding: 4px 8px; 
+                border: 1px solid var(--white); 
+                border-radius: 3px; 
+                background: var(--gray800); 
+                white-space: nowrap; 
+            }
+            .userButton:hover{
+                cursor: pointer;
+            }
             .button, .secondaryButton { 
                 font: inherit;
                 color: var(--gray900);
                 display: inline-block; 
-                padding: 5px 14px; 
+                padding: 4px 8px; 
                 border: 1px solid var(--gray600); 
                 border-radius: 3px; 
                 background: var(--gray600); 

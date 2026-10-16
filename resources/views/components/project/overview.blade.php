@@ -27,10 +27,10 @@ new class extends Component {
         </div>
         <div class="overview">
             <nav class="sectionNav">
-                <a class="{{$pstrPage == 'Summary' ? 'selected' : ''}}" wire:click="btnPage_click('Summary')">Summary</a>
-                <a class="{{$pstrPage == 'Console' ? 'selected' : ''}}" wire:click="btnPage_click('Console')">Console</a>
-                <a>Source code</a>
-                <a class="{{$pstrPage == 'About' ? 'selected' : ''}}" wire:click="btnPage_click('About')">About</a>
+                <a class="{{$pstrPage == 'Summary' ? 'selected' : ''}}" wire:click="btnPage_click('Summary')"><i class="fa-solid fa-book"></i> Summary</a>
+                <a class="{{$pstrPage == 'Console' ? 'selected' : ''}}" wire:click="btnPage_click('Console')"><i class="fa-solid fa-terminal"></i> Console</a>
+                <a href="{{$tblProject->fstrSource}}" target="_blank"><i class="fa-solid fa-code"></i> Source code</a>
+                <a class="{{$pstrPage == 'About' ? 'selected' : ''}}" wire:click="btnPage_click('About')"><i class="fa-solid fa-circle-question"></i> About</a>
             </nav>
             @switch($pstrPage)
                 @case('Summary')

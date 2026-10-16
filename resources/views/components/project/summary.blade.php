@@ -2,6 +2,7 @@
 
 use Livewire\Component;
 use App\Models\tblProject;
+use Illuminate\Support\Facades\Auth;
 
 new class extends Component {
     public $plngProjectId;
@@ -28,7 +29,9 @@ new class extends Component {
             <section class="panel" id="about">
                 <div class="panelHeading">
                     <h3>Notes</h3>
-                    <i class="fa-solid fa-pen-to-square" onclick="document.getElementById('edit-notes-dialog').showModal()"></i>
+                    @if(Auth::id())
+                        <i class="fa-solid fa-pen-to-square" onclick="document.getElementById('edit-notes-dialog').showModal()"></i>
+                    @endif
                 </div>
                 <div class="panelBody">
                     <p>{{$tblProject->fstrNotes}}</p>
