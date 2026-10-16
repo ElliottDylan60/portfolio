@@ -29,7 +29,9 @@ new class extends Component {
             <nav class="sectionNav">
                 <a class="{{$pstrPage == 'Summary' ? 'selected' : ''}}" wire:click="btnPage_click('Summary')"><i class="fa-solid fa-book"></i> Summary</a>
                 <a class="{{$pstrPage == 'Console' ? 'selected' : ''}}" wire:click="btnPage_click('Console')"><i class="fa-solid fa-terminal"></i> Console</a>
-                <a href="{{$tblProject->fstrSource}}" target="_blank"><i class="fa-solid fa-code"></i> Source code</a>
+                @if($tblProject->fstrSource)
+                    <a href="{{$tblProject->fstrSource}}" target="_blank"><i class="fa-solid fa-code"></i> Source code</a>
+                @endif
                 <a class="{{$pstrPage == 'About' ? 'selected' : ''}}" wire:click="btnPage_click('About')"><i class="fa-solid fa-circle-question"></i> About</a>
             </nav>
             @switch($pstrPage)

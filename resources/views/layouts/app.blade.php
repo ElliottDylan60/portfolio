@@ -6,6 +6,7 @@
 
         <title>{{ $title ?? config('app.name') }}</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
         @livewireStyles
@@ -106,6 +107,19 @@
                 white-space: nowrap; 
             }
             .userButton:hover{
+                cursor: pointer;
+            }
+            .grayButton {
+                font: inherit;
+                color: var(--gray900);
+                display: inline-block; 
+                padding: 4px 8px; 
+                border: 1px solid var(--gray600); 
+                border-radius: 3px; 
+                background: var(--gray600); 
+                white-space: nowrap; 
+            }
+            .grayButton:hover{
                 cursor: pointer;
             }
             .button, .secondaryButton { 

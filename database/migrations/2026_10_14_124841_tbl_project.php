@@ -18,6 +18,10 @@ return new class extends Migration
             $table->string('fstrConsole')->nullable();
             $table->string('fstrSource')->nullable();
             $table->longText('fstrAbout')->nullable();
+
+            $table->string('fstrStatus')->nullable();
+            $table->string('fstrType')->nullable();
+            $table->string('fstrDescription')->nullable();
         });
     }
 

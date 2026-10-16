@@ -48,7 +48,7 @@ new class extends Component {
         </aside>
         @switch($pstrPage)
             @case('Projects')
-                <livewire:project-overview />
+                <livewire:project-overview.overview />
                 @break
             @case('Skills')
                 <p>Skills</p>
@@ -60,7 +60,7 @@ new class extends Component {
                 <p>About</p>
                 @break
             @default
-                <livewire:project.overview :plngProjectId="$pstrPage" />
+                <livewire:project.overview :plngProjectId="$pstrPage" :key="$pstrPage"/>
         @endswitch
         
 

@@ -16,5 +16,8 @@ class tblProject extends Model
         "fstrConsole",
         "fstrSource",
         "fstrAbout",
+        "fstrStatus",
+        "fstrType",
+        "fstrDescription",
     ];
 }

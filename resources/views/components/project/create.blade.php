@@ -2,6 +2,7 @@
 
 use Livewire\Component;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
 
 use App\Models\tblProject;
 
@@ -11,14 +12,22 @@ new class extends Component
     public $pstrProjectTitle;
     public $pstrConsole;
     public $pstrSource;
+    public $pstrStatus;
+    public $pstrType;
+    public $pstrDescription;
 
     public function create(){
-        tblProject::create([
-            "flngProjectId" => $this->plngProjectId,
-            "fstrProjectTitle" => $this->pstrProjectTitle,
-            "fstrConsole" => $this->pstrConsole,
-            "fstrSource" => $this->pstrSource,
-        ]);
+        if(Auth::id()){
+            tblProject::create([
+                "flngProjectId" => $this->plngProjectId,
+                "fstrProjectTitle" => $this->pstrProjectTitle,
+                "fstrConsole" => $this->pstrConsole,
+                "fstrSource" => $this->pstrSource,
+                "fstrStatus" => $this->pstrStatus,
+                "fstrType" => $this->pstrType,
+                "fstrDescription" => $this->pstrDescription,
+            ]);
+        }
     }
 };
 ?>
@@ -101,6 +110,15 @@ new class extends Component
                     
                     <label for="project-name">Source:</label>
                     <input id="project-name" type="text" placeholder="https://example.com" wire:model="pstrSource">
+
+                    <label for="project-status">Status:</label>
+                    <input id="project-status" type="text" placeholder="running" wire:model="pstrStatus">
+
+                    <label for="project-type">Type:</label>
+                    <input id="project-type" type="text" placeholder="Website, Mobile App, Etc." wire:model="pstrType">
+
+                    <label for="project-description">Description:</label>
+                    <input id="project-description" type="text" placeholder="" wire:model="pstrDescription">
                 </div>
             </div>
             <div class="dialogFooter">
