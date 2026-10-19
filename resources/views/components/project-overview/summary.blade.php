@@ -13,6 +13,8 @@ new class extends Component
 ?>
 
 <div>
+    
+    
     <div class="content">
         <div class="cards">
             <section class="panel">
@@ -64,13 +66,71 @@ new class extends Component
         </section>
 
         <section class="panel" id="skills">
-            <h3 class="panelHeading">Skills & tools</h3>
+            <h3 class="panelHeading">Github Activity</h3>
             <div class="panelBody">
-                <p class="muted">Tools and technologies I've worked with</p>
-                <div class="tags">
-                    <span>PHP</span><span>Laravel</span><span>HTML5</span><span>CSS</span>
-                </div>
+                <div id="githubActivity"></div>
             </div>
         </section>
     </div>
+    <script>
+        async function fetchData() {
+            const response = await fetch('https://api.github.com/users/elliottdylan60/events');
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            const responseData = await response.json();
+            
+            const dateCounts = {};
+            responseData.forEach((element, index, array) => {
+                const dateTime = new Date(element.created_at);
+                const dateOnly = dateTime.toISOString().split('T')[0]; 
+                dateCounts[dateOnly] = (dateCounts[dateOnly] || 0) + 1;
+            });
+            const x = Object.keys(dateCounts);
+            const y = Object.values(dateCounts); 
+            var trace = {
+                x: x,
+                y: y,
+                type: 'scatter',
+                mode: 'lines',
+                line: {color: "#94ae0a"}, 
+                fill: 'tozeroy',
+            };
+            var data = [trace];
+
+            var layout = {
+                uirevision:'true',
+                xaxis: {
+                    type: 'date',
+                    showgrid: true,
+                    gridcolor: 'rgba(242, 242, 242, 0.2)',
+                    gridwidth: 1,
+                    tickfont: { color: '#f2f2f2' },
+                    tickformat: '%Y-%m-%d'
+                },
+                yaxis: {
+                    autorange: true, 
+                    showgrid: true,
+                    gridcolor: 'rgba(242, 242, 242, 0.2)',
+                    gridwidth: 1,
+                    tickfont: { color: '#f2f2f2' }
+                },
+                "plot_bgcolor": "#262626",
+                "paper_bgcolor": "#262626",
+                margin: {
+                    l: 20,  // Left
+                    r: 0,  // Right
+                    b: 20,  // Bottom
+                    t: 0,  // Top
+                    pad: 0  // Padding
+                },
+                
+            };
+
+            Plotly.react('githubActivity', data, layout);
+
+            var myPlot = document.getElementById('githubActivity');
+        }
+        fetchData();
+    </script>
 </div>

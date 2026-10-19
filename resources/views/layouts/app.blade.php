@@ -6,7 +6,7 @@
 
         <title>{{ $title ?? config('app.name') }}</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        
+        <script src="https://cdn.plot.ly/plotly-3.3.0.min.js" charset="utf-8"></script>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
         @livewireStyles
