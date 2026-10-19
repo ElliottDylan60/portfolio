@@ -159,9 +159,29 @@
                 overflow: hidden;
             }
             .projectList { 
-                background: var(--panelBackground);
+                
                 /*top right bottom left*/
                 margin: 0px 2px 0px 4px;
+            }
+            .viewSettings {
+                
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 4px;
+            }
+            .viewSettings select {
+                background: var(--panelHeader);
+                width: 100%;
+                padding: 5px 8px;
+            }
+            .viewSettings i {
+                padding: 5px;
+                margin-left: 4px;
+                background: var(--panelHeader);
+                border: 1px solid var(--gray700);
+                border-radius: 3px;
             }
             .panelHeading { 
                 background: var(--panelHeader);
@@ -175,11 +195,12 @@
                 padding: 9px 12px; 
             }
             .tree { 
-                padding: 6px 0; 
+                background: var(--panelBackground);
+                height: 100%;
             }
             .tree a, .tree summary, .sectionNav a { 
                 display: block; 
-                padding: 8px 12px; 
+                padding: 3px 12px; 
             }
             .tree summary { 
                 cursor: pointer; 

@@ -32,8 +32,17 @@ new class extends Component {
         </div>
     </header>
     <div class="workspace">
+        
         <aside class="projectList">
-            <h2 class="panelHeading">Project View</h2>
+            <div class="viewSettings">
+                <select>
+                    <option>Project View</option>
+                    <option>Folder View</option>
+                    <option>Pool View</option>
+                    <option>Tag View</option>
+                </select>
+                <i class="fa-solid fa-gear"></i>
+            </div>
             <nav class="tree">
                 <details open>
                     <summary class="{{$pstrPage == 'Projects' ? 'selected' : ''}}" wire:click="btnPage_click('Projects')">Projects</summary>
