@@ -24,7 +24,7 @@ new class extends Component {
             <span class="muted">Virtual Environment 1.0.0</span>
         </div>
         <div class="row">
-            <a class="button"><i class="fa-solid fa-book"></i> Resume</a>
+            <a class="button" href="/Resume.pdf"><i class="fa-solid fa-book"></i> Resume</a>
             @if(Auth::id())
                 <button class="secondaryButton" type="button" onclick="document.getElementById('add-project-dialog').showModal()"><i class="fa-solid fa-desktop"></i> Create Project</button>
             @endif

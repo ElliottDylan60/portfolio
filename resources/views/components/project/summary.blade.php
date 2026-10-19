@@ -41,7 +41,7 @@ new class extends Component {
 
 
         <section class="panel" id="skills">
-            <h3 class="panelHeading">Skills &amp; tools</h3>
+            <h3 class="panelHeading">Skills & tools (WIP)</h3>
             <div class="panelBody">
                 <p class="muted">Tools and technologies I've worked with</p>
                 <div class="tags">
