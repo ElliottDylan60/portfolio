@@ -12,7 +12,6 @@ new class extends Component{
 };
 ?>
 <div style="overflow:scroll; margin: 0; padding: 0">
-    
     <main class="informationView">
         <div class="toolbar">
             <span>Virtual Portfolio</span>

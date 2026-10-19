@@ -51,13 +51,13 @@ new class extends Component {
                 <livewire:project-overview.overview />
                 @break
             @case('Skills')
-                <p>Skills</p>
+                <livewire:pages::skills />
                 @break
             @case('Resume')
-                <p>Resume</p>
+                <livewire:pages::resume />
                 @break
             @case('About')
-                <p>About</p>
+                <livewire:pages::about />
                 @break
             @default
                 <livewire:project.overview :plngProjectId="$pstrPage" :key="$pstrPage"/>
